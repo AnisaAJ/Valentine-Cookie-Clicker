@@ -1,0 +1,329 @@
+html, body {
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    justify-content: center; /* Adjust this to 'flex-start' to align items to the left */
+    align-items: start;
+    flex-wrap: wrap; /* Allows items to wrap if there isn't enough horizontal space */
+    height: 100vh;
+    overflow: hidden;
+    background-color: pink;
+    font-family: sans-serif; /* Replace 'insert' with your chosen font */
+}
+
+.username-display {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+#playerName {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px; /* Space between the input and the button */
+}
+
+button {
+    background-color: blueviolet; /* Green background */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: plum; /* Darker green on hover */
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4)
+}
+
+.modal-content {
+    background-color: pink;
+    margin: 15% auto;
+    padding: 20px;
+    border: 3px solid palevioletred;
+    width: 80%;
+}
+
+.modal-content h2 {
+    color: blueviolet;
+}
+
+/* Container for the username display and story log */
+.game-top-section {
+    display: flex;
+    flex-direction: row; /* Elements in a row */
+    justify-content: center; /* Center-align the items horizontally */
+    align-items: center; /* Vertically align items in the middle */
+    margin-bottom: 20px; /* Space above the heart */
+}
+
+.username-display, .story-log {
+    margin: 0 10px; /* Add horizontal margin for spacing between them */
+}
+
+
+.content-container {
+    display: flex;
+    flex-direction: row; /* Stack the heartContainer and UpgradeCount vertically */
+    align-items: flex-start; /* Align children to the start (left) */
+    margin-top: 100px; /* Move upwards. Adjust value as needed. */
+    margin-left: -350px; /* Move towards the left. Adjust value as needed. */
+}
+
+
+/* Assuming you want to center the heart container as well */
+#heartContainer {
+    display: flex;
+    align-self: center;
+    justify-content: center; /* Center the heart horizontally */
+    margin-top: 20px; /* Ensure there's space between this section and whatever's above */
+    flex-direction: column;
+    order: 0;
+
+}
+
+#heart {
+    width: 50vw; /* Adjust based on desired size */
+    max-width: 200px; /* Maximum size */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+}
+
+#counter{
+    margin-left: 90px;
+    font-weight: bold;
+}
+
+/* No changes needed for #UpgradeCount based on your request */
+#UpgradeCount {
+    margin-left: 20px;
+    text-align: left; /* Assuming you want the text aligned to the left */
+    align-self: center;
+}
+
+#UpgradeCount p {
+    font-weight: bold;
+}
+
+#UpgradeCount h3 {
+    color: blueviolet;
+}
+
+
+#upgrades {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-left: auto;
+    top: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    order: 3;
+    max-height: 70vh; /* Adjust based on viewport height */
+    overflow-y: auto; /* Allows scrolling within the container if needed */
+}
+
+.upgrade {
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer; 
+}
+
+.upgrade:hover {
+    background-color: rgb(255, 204, 255);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.upgrade img {
+    width: 100px;
+    max-width: 100%;
+    height: 100px;
+    display: block;
+    margin: auto; 
+}
+
+.upgrade p {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.milestone-message {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none;
+}
+
+.milestone-message-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) 0 rgba(0,0,0,0.19);
+    position: relative;
+}   
+
+#closeMilestoneMessage {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.settings-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: fixed; /* Fixed position relative to the viewport */
+    top: 50%; /* Move down to the middle of the height */
+    left: 50%; /* Move in to the middle of the width */
+    transform: translate(-50%, -50%); /* Adjust position to truly center based on element's size */
+    background-color: #f9f9f9; /* Background color */
+    border: 1px solid #ccc; /* Border for visibility */
+    padding: 20px; /* Padding for content inside */
+    border-radius: 8px; /* Rounded corners for aesthetics */
+    z-index: 100;
+    display: none;
+    gap: 10px;
+}
+
+#settingsButton {
+    background-color: blueviolet;
+    color: white;
+    font-weight: bold;
+}
+
+.settings-menu h3 {
+    margin-top: 0;
+    color: blueviolet;
+}
+
+#restartGameButton {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #000;
+    z-index: 1000; /* Ensure it's above other content */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; /* Hidden by default */
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup .coupon-text {
+    margin-bottom: 20px;
+    display: block; /* Ensure it takes its own line */
+    /* Additional styling as needed */
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Additional styling as needed */
+}
+
+.popup button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide/Show Popup */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #heart, #counter, #upgrades {
+        order: 0; 
+        margin-left: 0; 
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    #upgrades {
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .some-element {
+        display: none;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    #UpgradeCount {
+        margin-top: 30px; /* Smaller margin for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .username-display, button {
+        font-size: 16px; /* Smaller text on smaller screens */
+        padding: 8px 16px; /* Smaller padding */
+    }
+    .username-display {
+        top: 10px;
+        left: 10px;
+    }
+}
