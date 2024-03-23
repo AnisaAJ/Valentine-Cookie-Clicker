@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/valentines.css">
+        <title> yes or no? </title>
+        <link rel="icon" href="../pictures/iconpics/conversationhearticon.jpg">
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text"> Will you be my valentines? </h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id ="yesButton" onclick="nextPage()">Yes</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html"
+                    }
+
+                    function moveButton() {
+                        var button = document.getElementById('noButton');
+                        var maxX = window.innerWidth - button.offsetWidth;
+                        var maxY = window.innerHeight - button.offsetHeight;
+
+                        var x = Math.random() * maxX;
+                        var y = Math.random() * maxY;
+
+                        // Ensure the button stays within the visible area
+                        x = Math.max(0, Math.min(x, maxX));
+                        y = Math.max(0, Math.min(y, maxY));
+
+                        button.style.left = `${x}px`;
+                        button.style.top = `${y}px`;
+                    }
+
+                </script>
+            </div>
+        </div>
+       
+    </body> 
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Valentines Game </title>
+    <link rel="icon" href="pictures/valentinesimg/mainheart.png">
+    <link rel="stylesheet" href="css/yes.css">
+</head>
+<body>
+
+<div id="welcomeScreen" class="modal">
+    <div class="modal-content">
+        <h2> Welcome to the Valentine Town! </h2>
+
+        <p class="part-1"> You have inhereited your parents' Valentine's cookie factory. It has seen better days. 
+            It used to be a great lively place around town, where everyone of all ages hung around. 
+            A perfect spot for newly couples to visit for all sorts of different things. 
+            Such as personalized cookies, shooting hearts, roses, letters, even cupids! </p>
+
+        <p class="part-2"> Unfortunately, ever since the disappearance of your parents, the Valentine's Cookie Factory
+            has long since been a forgotten gem, shrouded in the shadows of its past glory. 
+            The vibrant colors have faded, the sweet scents of fresh cookies no longer fill the air, 
+            and the laughter and joy that once echoed through its halls have quieted. But now, as its new owner, 
+            you have the chance to restore the factory to its former splendor and bring back the warmth and love that Valentine's Day stands for.</p>
+                
+        <p class="part-3"> It won't be easy. The machines are rusty, the recipes are lost, and the competition is fiercer than ever. 
+            But with determination, a sprinkle of creativity, and a dash of love, you can rebuild the factory from the ground up. 
+            You'll start small, with just a few basic cookies and decorations. But as you gather more hearts and spread more love, 
+            you can expand your offerings, upgrade your equipment, and maybe even discover some of your parents' long-lost cookie recipes.</p>
+                
+        <p class="part-4"> So roll up your sleeves, preheat the oven, and get ready to sprinkle a little bit of love on everything you bake. 
+            The journey to restore the Valentine's Cookie Factory starts now. Who knows? Along the way, you might not only revive a business but also rediscover 
+            the true meaning of Valentine's Day ;))).</p>
+
+        <p class="part-5"> So what is your name? </p>
+
+        <input type="text" id="playerName" placeholder="Enter Your Name">
+        <button onClick="startGame()"> Start Game! </button>     
+    </div>
+</div>
+
+<div class="game-top-section">
+    <div id="usernameDisplay" class="username-display">Welcome, Player!</div>
+</div>
+
+<button id="settingsButton"> Settings </button>
+
+<div id="settingsMenu" class="settings-menu">
+    <h3> Settings </h3>
+    <button id="saveGameButton"> Save </button>
+    <button id="restartGameButton"> Restart Game </button>
+</div>
+
+<div id="couponPopup" class="popup hidden">
+    <div class="popup-content">
+        <span class="coupon-text"> Your coupon will appear here! </span>
+        <button onclick="closePopup('couponPopup')">Close</button>
+    </div>
+</div>
+
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+&nbsp; 
+
+<div class="content-container">
+    <div id="heartContainer">
+        <img id="heart" src="valentinesimg/mainheart.png" alt="Heart"> 
+        <p id="counter"> 0 </p>
+    </div>
+    <div id="UpgradeCount">
+        <h3> Upgrades Purchased </h3>
+        <p id="rosesPurchased">Roses Purchased: 0</p>
+        <p id="lettersPurchased">Letters Purchased: 0</p>
+        <p id="kissesPurchased">Kisses Purchased:  0</p>
+        <p id="chocolatesPurchased">Chocolates Purchased: 0</p>
+        <p id="cupidsPurchased">Cupids Purchased: 0</p>
+        <p id="chocolateboxesPurchased">Chocolate Boxes Purchased: 0</p>
+        <p id="chocolatestrawberriesPurchased">Chocolate Strawberries Purchased: 0</p>
+        <p id="shootingheartsPurchased">Shooting Hearts Purchased:  0</p>
+        <p id="pinkoshasPurchased"> Pink Oshawatts Purchased: 0</p>
+    </div>
+</div>
+
+    <div id="upgrades">
+        <div class="upgrade" id="rose">
+            <img src="valentinesimg/buyrose.png" alt="Rose">
+            <p id="rose_cost"> 20 </p>
+        </div>
+
+        <div class="upgrade" id="letter">
+            <img src="valentinesimg/buyletter.png" alt="Letter">
+            <p id="letter_cost"> 100 </p>
+        </div>
+
+        <div class="upgrade" id="kisses">
+            <img src="valentinesimg/buykisses.png" alt="Kisses">
+            <p id="kisses_cost"> 500 </p>
+        </div>
+
+        <div class="upgrade" id="chocolate">
+            <img src="valentinesimg/buychocolate.png" alt="Chocolate">
+            <p id="chocolate_cost"> 1500 </p>
+        </div>
+
+        <div class="upgrade" id="cupid">
+            <img src="valentinesimg/buycupid.png" alt="Cupid">
+            <p id="cupid_cost"> 2000 </p>
+        </div>
+                
+        <div class="upgrade" id="chocolatebox">
+            <img src="valentinesimg/buychocolatebox.png" alt="Chocolate-box">
+            <p id="chocolate_box-cost"> 3000 </p>
+        </div>
+                                
+        <div class="upgrade" id="chocolatestrawberry">
+            <img src="valentinesimg/buychocolatestrawberry.png" alt="Chocolate-strawberry">
+            <p id="chocolate_strawberry-cost"> 6000 </p>
+        </div>
+
+        <div class="upgrade" id="shootingheart">
+            <img src="valentinesimg/buyshootingheart.png" alt="Shootingheart">
+            <p id="shootingheart-cost"> 15000 </p>
+        </div>
+
+        <div class="upgrade" id="pinkosha"> 
+            <img src="valentinesimg/buypinkosha.png" alt="Pinkosha">
+            <p id="pinkosha-cost"> 45000 </p>
+        </div>
+    </div>
+
+
+<div id="milestoneMessage" clas="milestone-message">
+    <span id="closeMilestoneMessage" style="cursor: poointer;">&times;</span>
+</div>
+ 
+
+
+
+    <script src="js/yes.js" type="text/javascript"></script>
+</body>
+</html>
